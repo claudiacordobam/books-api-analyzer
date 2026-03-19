@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fonaments de Programació: Google Books Api</title>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  
+  <style>
+    li {margin-top: 0.5em}
+    body {
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0; 
+	  font-family: 'Roboto', sans-serif; 
+    }
+
+    #loader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(115, 237, 255, 0.5); 
+      opacity: 1;
+      transition: opacity 1s ease-in-out; 
+    }
+
+    .bar-container {
+      display: flex;
+      margin-bottom: 20px; 
+    }
+
+    .bar {
+      width: 10px;
+      height: 50px;
+      margin: 0 5px;
+      background-color: #000078;
+      animation: wave 1.5s infinite;
+    }
+
+    .bar:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .bar:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes wave {
+      0%, 40%, 100% {
+        transform: scaleY(0.4);
+      }
+      20% {
+        transform: scaleY(1);
+      }
+    }
+
+    #loading-text {
+      font-size: 18px;
+      color: #000078; 
+    }
+    .hidden {
+      opacity: 0 !important;
+      pointer-events: none;
+    }
+	form{
+		width: 100vh;
+		padding: 3%;
+	}
+    .content {
+      opacity: 1 !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="loader">
+    <div class="bar-container">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div id="loading-text">loading data from <em>https://www.googleapis.com/books/</em>...<b><span id="total">0</span></b></div>
+  </div>
+  <form name="f" id="myContent" class="hidden">
+    <p><button id="letsGo" type="button" onclick="calcula()" disabled>EXECUTE!</button></p>
+    <ul>
+      <li>EXERCICE 1: <b>getMostCommonSubject(myBookData)</b><br><br><span id="e1" style="color:blue"></span><br><br></li>
+      <li>EXERCICE 2: <b>getBooksByPageRange(myBookData, 120, 150)</b><br><br><span id="e2" style="color:blue"></span><br><br></li>
+      <li>EXERCICE 3: <b>getAveragePageCount(myBookData)</b><br><br><span id="e3" style="color:blue"></span><br><br></li>
+      <li>EXERCICE 4: <b>parsePublishDateToWeekday(myBookData[0].publish_date)</b><br><br><span id="e4" style="color:blue"></span><br><br></li>
+      <li>EXERCICE 5: <b>getWeekdayWithMostPublications(myBookData)</b><br><br><span id="e5" style="color:blue"></span><br><br></li>
+      <li>EXERCICE 6: <b>getAuthorWithMostBooks(myBookData)</b><br><br><span id="e6" style="color:blue"></span><br><br></li>
+      <li>EXERCICE 7: <b>transformTitleToAcronym(myBookData[7].title)</b><br><br><span id="e7" style="color:blue"></span><br><br></li>
+      <li>EXERCICE 8: <b>getMostCommonAcronym(myBookData)</b><br><br><span id="e8" style="color:blue"></span><br><br></li>
+    </ul>
+  </form>
+	<script src="./script.js"></script>
+	<script src="./practica.js"></script>
+</body>
+</html>
