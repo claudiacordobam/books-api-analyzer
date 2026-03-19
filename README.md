@@ -22,9 +22,9 @@ The goal is to practice **JSON data handling**, **API integration**, and **modul
 ---
 
 ## 🧩 Project Structure
-├── index.html # UI structure (provided)
-├── script.js # API fetch logic (provided)
-├── practica.js # Custom data analysis (my work)
+- `index.html` # UI structure (provided)
+- `script.js` # API fetch logic (provided)
+- `practica.js` # Custom data analysis (my work)
 
 
 ---
